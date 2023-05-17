@@ -4,6 +4,8 @@ import (
 	"go.mongodb.org/mongo-driver/bson/bsoncodec"
 )
 
+// BuildDefaultRegistry is a bsoncodec.Registry with codec for
+// null.String, null.Int, null.Float, null.Bool and null.Time
 func BuildDefaultRegistry() *bsoncodec.Registry {
 	rb := bsoncodec.NewRegistryBuilder()
 	bsoncodec.DefaultValueEncoders{}.RegisterDefaultEncoders(rb)
